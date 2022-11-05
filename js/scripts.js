@@ -1,46 +1,42 @@
 function hideResults() {
-  document.getElementById("yes").setAttribute("class", "hidden");
-  document.getElementById("no").setAttribute("class", "hidden");
-  document.getElementById("red").setAttribute("class", "hidden");
-  document.getElementById("blue").setAttribute("class", "hidden");
-  document.getElementById("winter").setAttribute("class", "hidden");
-  document.getElementById("summer").setAttribute("class", "hidden");
-  document.getElementById("dog").setAttribute("class", "hidden");
-  document.getElementById("cats").setAttribute("class", "hidden");
-  document.getElementById("yes1").setAttribute("class", "hidden");
-  document.getElementById("no1").setAttribute("class", "hidden");
+  document.getElementById("dance").setAttribute("class", "hidden");
+  document.getElementById("dogs").setAttribute("class", "hidden");
+  document.getElementById("season").setAttribute("class", "hidden"); 
+  document.getElementById("color").setAttribute("class", "hidden");
+  document.getElementById("snake").setAttribute("class", "hidden");
 }
 
-//UI Logic//
 function handleRadio(event) {
   event.preventDefault();
-  const input1 = document.querySelector("input[name='dancing']").value;
-  const input2 = document.querySelector("input[name='animals']").value;
-  const input3 = document.querySelector("input[name='color']").value;
-  const input4 = document.querySelector("input[name='season']").value;
-  const input5 = document.querySelector("input[name='snake']").value;
-}
-window.addEventListener("load", function() {
-  document.getElementById("radio-form").addEventListener("submit", handleRadio);
-});
+  const yes = document.querySelector("yes").value;
+  const no = document.querySelector("no").value;
+  const blue = document.querySelector("blue").value;
+  const red = document.querySelector("red").value;
+  const summer = document.querySelector("summer").value;
+  const winter = document.querySelector("winter").value;
+  const yes1 = document.querySelector("yes1").value;
+  const no1 = document.querySelector("no1").value;
+  const dogs = document.querySelector("dogs").value;
+  const cats = document.querySelector("cats").value;
+
+
   let result;
-  if ("yes", "blue" , "winter", "dogs" , "yes1") {
-    document.getElementById("ruby").removeAttribute("class");
-    result = "ruby";
-  } else if ("no" , "red" , "summer", "cats", "no1" ) {
+  if (yes, blue, summer, yes1, dogs) {
     document.getElementById("swift").removeAttribute("class");
     result = "swift";
-  } else if ("yes", "blue" , "summer" , "dogs" , "no1") {
+  } else if (no, red, winter, no1, cats) {
+    document.getElementById("ruby").removeAttribute("class");
+    result = "ruby";
+  } else if (yes, red, winter, no1, dogs) {
     document.getElementById("python").removeAttribute("class");
     result = "python";
+
+    document.getElementById("output").innerText = result; 
   }
 
 
 
-  document.getElementById("output").innerText = result; 
-
-
 window.addEventListener("load", function() {
-  const form = document.getElementById("tests");
-  form.addEventListener("submit", handleRadio);
+  document.getElementById("radio-form").addEventListener("submit", handleRadio);
 });
+};
