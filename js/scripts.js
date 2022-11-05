@@ -10,21 +10,21 @@ function hideResults() {
 //UI Logic//
 function handleRadio(event) {
   event.preventDefault();
-  const yes = document.querySelector("input[name='yes']")
-  const no = document.querySelector("input[name='no']")
-  const dog = document.querySelector("input[name='dog']")
-  const cat = document.querySelector("input[name='cat']")
-  const blue = document.querySelector("input[name='blue']")
-  const red = document.querySelector("input[name='red']")
-  const summer = document.querySelector("input[name='summer']")
-  const winter = document.querySelector("input[name='winter']")
-  const YES = document.querySelector("input[name='yes1']")
-  const NO = document.querySelector("input[name='no1']")
+  const yes = document.querySelector("input[name='yes']");
+  const no = document.querySelector("input[name='no']");
+  const dog = document.querySelector("input[name='dog']");
+  const cat = document.querySelector("input[name='cat']");
+  const blue = document.querySelector("input[name='blue']");
+  const red = document.querySelector("input[name='red']");
+  const summer = document.querySelector("input[name='summer']");
+  const winter = document.querySelector("input[name='winter']");
+  const YES = document.querySelector("input[name='yes1']");
+  const NO = document.querySelector("input[name='no1']");
   
   let result;
-  if (yes) {
+  if ("snake"===yes && "season"===summer && "color"===blue && "pets"===dog && "run"===yes) {
     document.getElementById("python").removeAttribute("class");
-    result = "python";
+    result = "python"; 
   } else if (no && cat && winter && red && NO) {
     document.getElementById("ruby").removeAttribute("class");
     result = "ruby";
