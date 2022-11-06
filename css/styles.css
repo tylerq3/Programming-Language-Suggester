@@ -1,3 +1,31 @@
 .hidden {
   display: none;
 }
+body {
+  background-color: lightgrey; 
+}
+
+h1 {
+  width: 100%;
+  padding: 10px;
+  border: solid black;
+  border-width: 10px;
+  background-color: skyblue;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  box-align: center;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+}
+
+.output {
+  text-align: center;
+}
+
