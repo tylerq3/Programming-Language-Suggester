@@ -10,25 +10,21 @@ function hideResults() {
 //UI Logic//
 function handleRadio(event) {
   event.preventDefault();
-  const yes = document.querySelector("input[run='yes'");
-  const no = document.querySelector("input[run='no']");
-  const dog = document.querySelector("input[pets='dog']");
-  const cat = document.querySelector("input[pets='cat']");
-  const blue = document.querySelector("input[color='blue']");
-  const red = document.querySelector("input[color='red']");
-  const summer = document.querySelector("input[season='summer']");
-  const winter = document.querySelector("input[season='winter']");
-  const YES = document.querySelector("input[snake='yes1']");
-  const NO = document.querySelector("input[snake='no1']");
+  const run = document.querySelector("input#run").value;
+  const pets = document.querySelector("input#pets").value;
+  const color = document.querySelector("input#color").value;
+  const season = document.querySelector("input#season").value;
+  const snake = document.querySelector("input#snake").value;
+  
   
   let result;
-  if (yes && dog && blue && summer && YES)  {
+  if (run === "yes" && pets === "dogs" && color === "blue" && season === "summer" && snake === "no1")  {
     document.getElementById("python").removeAttribute("class"); 
     result = "python"
-  } else if (no && cat && winter && red && NO) {
+  } else if (run === "no" && pets === "cats" && season === "winter" && color === "red" &&snake === "no1") {
     document.getElementById("ruby").removeAttribute("class");
     result = "ruby";
-  } else if (yes && cat && summer && red && NO) {
+  } else if (run === "yes" &&pets === "cat" &&season === "summer" &&color === "red" &&snake === "no1") {
     document.getElementById("swift").removeAttribute("class");
     result = "swift";
   }
