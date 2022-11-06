@@ -22,7 +22,7 @@ function handleRadio(event) {
   const NO = document.querySelector("input[snake='no1']");
   
   let result;
-  if (yes && dog && blue && summer && YES) {
+  if (yes && dog && blue && summer && YES)  {
     document.getElementById("python").removeAttribute("class"); 
     result = "python"
   } else if (no && cat && winter && red && NO) {
