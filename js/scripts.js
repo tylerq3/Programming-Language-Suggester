@@ -10,11 +10,14 @@ function hideResults() {
 //UI Logic//
 function handleRadio(event) {
   event.preventDefault();
-  const run = document.querySelector("input#run").value;
-  const pets = document.querySelector("input#pets").value;
-  const color = document.querySelector("input#color").value;
-  const season = document.querySelector("input#season").value;
-  const snake = document.querySelector("input#snake").value;
+  const run = document.querySelector("input[name='run']:checked").value;
+  console.log(run)
+  const pets = document.querySelector("input[name='pets']:checked").value;
+  const color = document.querySelector("input[name='color']:checked").value;
+  const season = document.querySelector("input[name='season']:checked").value;
+  const snake = document.querySelector("input[name='snake']:checked").value;
+
+
   
   
   let result;
