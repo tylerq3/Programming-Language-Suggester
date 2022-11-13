@@ -5,10 +5,10 @@ function hideResults() {
   document.getElementById("color").setAttribute("class" , "hidden");
   document.getElementById("season").setAttribute("class" , "hidden");
   document.getElementById("snake").setAttribute("class" , "hidden");
-  document.getElementById("error").setAttribute("class" , "hidden").value.null;
-  document.getElementById("python").setAttribute("class" , "hidden").value.null;
-  document.getElementById("swift").setAttribute("class" , "hidden").value.null;
-  document.getElementById("ruby").setAttribute("class" , "hidden").value.null;
+  document.getElementById("error").setAttribute("class" , "hidden");
+  document.getElementById("python").setAttribute("class" , "hidden");
+  document.getElementById("swift").setAttribute("class" , "hidden");
+  document.getElementById("ruby").setAttribute("class" , "hidden");
 }
 
 //UI Logic//
@@ -44,7 +44,7 @@ function handleRadio(event) {
 
 
 window.addEventListener("load", function() {
-  const reset = document.getElementById("output", results)
+  const reset = document.getElementById(result)
   reset.addEventListener("reset", hideResults);
 });
 
