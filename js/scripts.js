@@ -5,13 +5,16 @@ function hideResults() {
   document.getElementById("color").setAttribute("class" , "hidden");
   document.getElementById("season").setAttribute("class" , "hidden");
   document.getElementById("snake").setAttribute("class" , "hidden");
+  document.getElementById("error").setAttribute("class" , "hidden").value.null;
+  document.getElementById("python").setAttribute("class" , "hidden").value.null;
+  document.getElementById("swift").setAttribute("class" , "hidden").value.null;
+  document.getElementById("ruby").setAttribute("class" , "hidden").value.null;
 }
 
 //UI Logic//
 function handleRadio(event) {
   event.preventDefault();
   const run = document.querySelector("input[name='run']:checked").value;
-  console.log(run)
   const pets = document.querySelector("input[name='pets']:checked").value;
   const color = document.querySelector("input[name='color']:checked").value;
   const season = document.querySelector("input[name='season']:checked").value;
@@ -27,9 +30,11 @@ function handleRadio(event) {
   } else if (run === "no" && pets === "cats" && season === "winter" && color === "red" &&snake === "no1") {
     document.getElementById("ruby").removeAttribute("class");
     result = "ruby";
-  } else if (run === "yes" &&pets === "cat" &&season === "summer" &&color === "red" &&snake === "no1") {
+  } else if (run === "yes" && pets === "cats" && season === "summer" && color === "red" &&snake === "no1") {
     document.getElementById("swift").removeAttribute("class");
     result = "swift";
+  } else {
+    document.getElementById("error").removeAttribute("class");
   }
 
 
@@ -37,7 +42,25 @@ function handleRadio(event) {
   document.getElementById("output").innerText = result; 
 }
 
+
+window.addEventListener("load", function() {
+  const reset = document.getElementById("output", results)
+  reset.addEventListener("reset", hideResults);
+});
+
 window.addEventListener("load", function() {
   const form = document.getElementById("radio-form");
   form.addEventListener("submit", handleRadio);
+
+
+  document.getElementById("reset").value = "";
+  
+
+
+
 });
+
+
+
+
+
