@@ -1,14 +1,12 @@
 
 function hideResults() {
-  document.getElementById("run").setAttribute("class" , "hidden");
-  document.getElementById("pets").setAttribute("class" , "hidden");
-  document.getElementById("color").setAttribute("class" , "hidden");
-  document.getElementById("season").setAttribute("class" , "hidden");
-  document.getElementById("snake").setAttribute("class" , "hidden");
   document.getElementById("error").setAttribute("class" , "hidden");
   document.getElementById("python").setAttribute("class" , "hidden");
   document.getElementById("swift").setAttribute("class" , "hidden");
   document.getElementById("ruby").setAttribute("class" , "hidden");
+  document.getElementById("radio-form").removeAttribute("class", "hidden");
+  document.getElementById("reset").setAttribute("class" , "hidden");
+  document.getElementById("results").setAttribute("class", "hidden");
 }
 
 //UI Logic//
@@ -19,10 +17,10 @@ function handleRadio(event) {
   const color = document.querySelector("input[name='color']:checked").value;
   const season = document.querySelector("input[name='season']:checked").value;
   const snake = document.querySelector("input[name='snake']:checked").value;
+  document.getElementById("radio-form").setAttribute("class" , "hidden");
+  document.getElementById("reset").removeAttribute("class", "hidden");
+  document.getElementById("results").removeAttribute("class", "hidden");
 
-
-  
-  
   let result;
   if (run === "yes" && pets === "dogs" && color === "blue" && season === "summer" && snake === "no1")  {
     document.getElementById("python").removeAttribute("class"); 
@@ -36,22 +34,15 @@ function handleRadio(event) {
   } else {
     document.getElementById("error").removeAttribute("class");
   }
-
-
-
-  document.getElementById("output").innerText = result; 
+ 
 }
-
-
-window.addEventListener("load", function() {
-  const reset = document.getElementById(result)
-  reset.addEventListener("reset", hideResults);
-});
 
 window.addEventListener("load", function() {
   const form = document.getElementById("radio-form");
   form.addEventListener("submit", handleRadio);
-
+  const reset = document.getElementById("reset")
+  reset.addEventListener("click", hideResults);
+ 
 
   document.getElementById("reset").value = "";
   
